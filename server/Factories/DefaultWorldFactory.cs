@@ -29,8 +29,8 @@ public class DefaultWorldFactory
     private Board CreateBoard() => new()
     {
         Timeline = 1,
-        Year = 1901,
-        Phase = Phase.Spring,
+        Year = 1900,
+        Phase = Phase.Winter,
         ChildTimelines = [],
         Centres = CreateCentres(),
         Units = CreateUnits(),
@@ -55,8 +55,8 @@ public class DefaultWorldFactory
         foreach (var centre in centres)
         {
             centre.Location.Timeline = 1;
-            centre.Location.Year = 1901;
-            centre.Location.Phase = Phase.Spring;
+            centre.Location.Year = 1900;
+            centre.Location.Phase = Phase.Winter;
         }
 
         return centres;
@@ -81,8 +81,8 @@ public class DefaultWorldFactory
         foreach (var unit in units)
         {
             unit.Location.Timeline = 1;
-            unit.Location.Year = 1901;
-            unit.Location.Phase = Phase.Spring;
+            unit.Location.Year = 1900;
+            unit.Location.Phase = Phase.Winter;
         }
 
         return units;
