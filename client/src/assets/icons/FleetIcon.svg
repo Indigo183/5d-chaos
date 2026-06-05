@@ -1,11 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28">
   <defs>
-    <radialGradient id="shadow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-      <stop offset="70%" stop-color="black" />
-      <stop offset="100%" stop-color="transparent" />
-    </radialGradient>
+    <filter id="shadow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <feGaussianBlur stdDeviation="1.3" />
+    </filter>
   </defs>
-  <circle cx="14" cy="14" r="15.5" fill="url(#shadow)" />
-  <circle cx="14" cy="14" r="14" fill="currentColor"/>
-  <text dy="2" x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-size="16">F</text>
+  <polygon points="-1.22282,5.54574 14,25.5 28.77718,5.54574" fill="black" filter="url(#shadow)" />
+  <polygon points="0.22282,6.04574 14,24 27.77718,6.04574" fill=currentColor/>
 </svg>  
