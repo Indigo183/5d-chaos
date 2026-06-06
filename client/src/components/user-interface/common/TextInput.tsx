@@ -1,4 +1,5 @@
 import { useState, forwardRef, useImperativeHandle } from 'react';
+import colours from '../../../utils/colours';
 
 type TextInputProps = {
   placeholder: string;
@@ -28,6 +29,10 @@ const TextInput = forwardRef<TextInputHandle, TextInputProps>(({ placeholder, on
       onChange={(event) => {
         setValue(event.target.value);
         onChange(event.target.value);
+      }}
+      style={{
+        backgroundColor: colours.uiBackground,
+        borderColor: colours.uiBorder,
       }}
     />
   );
