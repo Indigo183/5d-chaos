@@ -33,7 +33,7 @@ const handleAdjustmentOrderCreation = (
     (currentMode === InputMode.Build || (!unit && currentMode === InputMode.None)) &&
     !currentOrder
   ) {
-
+    if (!isPlayerNation) return state;
 
     return {
       ...state,
