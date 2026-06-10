@@ -18,6 +18,7 @@ const PlayerList = () => {
   const { winner } = world;
 
   const playerCentres = Object.values(Nation)
+    .filter((nation) => nation !== Nation.Superuser)
     .map((nation) => ({
       player: nation,
       centres: filterUnique(

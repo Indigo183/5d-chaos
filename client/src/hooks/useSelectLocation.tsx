@@ -19,6 +19,8 @@ const canSelectMajorLocation = (
   isActiveBoard: boolean,
   isRetreatTurn: boolean,
 ) => {
+  if (player === Nation.Superuser) player = null;
+
   if (currentMode === InputMode.Build) return false;
 
   if (isRetreatTurn) {
@@ -59,6 +61,8 @@ const canSelectMinorLocation = (
   isActiveBoard: boolean,
   isRetreatTurn: boolean,
 ) => {
+  if (player === Nation.Superuser) player = null;
+
   if (!isActiveBoard || isRetreatTurn) return false;
 
   const coasts = Object.keys(regions).filter(

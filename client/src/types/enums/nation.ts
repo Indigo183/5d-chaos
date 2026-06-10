@@ -34,7 +34,9 @@ enum Nation {
   Tunis = 'Tunis',
   Venice = 'Venice',
   Vienna = 'Vienna',
-  Warsaw = 'Warsaw'
+  Warsaw = 'Warsaw',
+
+  Superuser = "Superuser",
 }
 
 export const getNationColour = (nation?: Nation, isEmphasised: boolean = true) => {
@@ -74,6 +76,8 @@ export const getNationColour = (nation?: Nation, isEmphasised: boolean = true) =
     [Nation.Venice]: '#6B3F95',
     [Nation.Vienna]: '#FF8C00',
     [Nation.Warsaw]: '#00CC99',
+
+    [Nation.Superuser]: '#FFFFFF',
   }[nation];
 };
 

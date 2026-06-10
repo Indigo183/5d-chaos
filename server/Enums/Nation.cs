@@ -2,7 +2,9 @@
 
 public enum Nation
 {
-  Ankara, 
+  Superuser,
+
+  Ankara,
   Belgium,
   Berlin,
   Brest,

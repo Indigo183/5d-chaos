@@ -6,7 +6,8 @@ import WorldContext from '../context/WorldContext';
 import TextInput, { TextInputHandle } from './common/TextInput';
 import { orderToString, stringToOrders } from '../../types/str_to_orders';
 
-const SubmitButton = () => {
+const SubmitButton = (isSuperuserButInputOnly: boolean | {} = false) => {
+  const isSuperuser = isSuperuserButInputOnly === true ? true : false;
   const { world, submitOrders, isLoading, error } = useContext(WorldContext);
   const { dispatch, orders } = useContext(OrderEntryContext);
   const textRef = useRef<string>("")
@@ -34,7 +35,7 @@ const SubmitButton = () => {
 
   return (
     <div className="absolute right-10 bottom-10">
-      <TextInput placeholder='input moves' onChange={onChange} ref={inputRef}></TextInput>
+      { isSuperuser && <TextInput placeholder='input moves' onChange={onChange} ref={inputRef}></TextInput> }
       <Button
         text="Submit"
         onClick={onSubmit}
