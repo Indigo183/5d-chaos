@@ -21,7 +21,7 @@ public class EntityMapper
     public Models.Board MapBoard(Entities.Board board, List<Entities.Build> builds)
     {
         // Hide units created by builds on the same board
-        var visibleUnits = board.Units.Where(u => builds.All(o => o.Unit != u)).ToList();
+        var visibleUnits = board.Units.Where(u => builds.All(o => o.Unit.Id != u.Id)).ToList();
 
         return new(board.Timeline,
             board.Year,
