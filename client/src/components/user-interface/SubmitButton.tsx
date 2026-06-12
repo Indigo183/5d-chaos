@@ -6,8 +6,14 @@ import WorldContext from '../context/WorldContext';
 import TextInput, { TextInputHandle } from './common/TextInput';
 import { orderToString, stringToOrders } from '../../types/str_to_orders';
 
-const SubmitButton = (isSuperuserButInputOnly: boolean | {} = false) => {
-  const isSuperuser = isSuperuserButInputOnly === true ? true : false;
+import GameContext from '../context/GameContext';
+import Nation from '../../types/enums/nation';
+
+const SubmitButton = () => {
+  const { game } = useContext(GameContext);
+  if (!game) return null;
+  const { id, player } = game;
+
   const { world, submitOrders, isLoading, error } = useContext(WorldContext);
   const { dispatch, orders } = useContext(OrderEntryContext);
   const textRef = useRef<string>("")
@@ -35,7 +41,7 @@ const SubmitButton = (isSuperuserButInputOnly: boolean | {} = false) => {
 
   return (
     <div className="absolute right-10 bottom-10">
-      { isSuperuser && <TextInput placeholder='input moves' onChange={onChange} ref={inputRef}></TextInput> }
+      { player === Nation.Superuser && <TextInput placeholder='input moves' onChange={onChange} ref={inputRef}></TextInput> }
       <Button
         text="Submit"
         onClick={onSubmit}

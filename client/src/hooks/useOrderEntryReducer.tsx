@@ -14,11 +14,14 @@ import GameContext from '../components/context/GameContext';
 import WorldContext from '../components/context/WorldContext';
 import regions from '../data/regions';
 
+import Nation from '../types/enums/nation.ts';
+
 const handleAdjustmentOrderCreation = (
   state: Omit<OrderEntryState, 'dispatch'>,
   action: AddOrderAction,
 ): Omit<OrderEntryState, 'dispatch'> => {
-  const { player, currentMode, currentOrder } = state;
+  let { player, currentMode, currentOrder } = state;
+  if (player === Nation.Superuser) player = null;
   const { unit, location } = action;
   const filteredOrders = state.orders.filter(
     (order) => !compareLocations(order.location, action.location, true),
