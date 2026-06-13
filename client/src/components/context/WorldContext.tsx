@@ -43,7 +43,7 @@ const initialWorldContextState: WorldContextState = {
 const WorldContext = createContext(initialWorldContextState);
 
 export const WorldContextProvider = ({ children }: PropsWithChildren) => {
-  const { game } = useContext(GameContext);
+  const { game, playersSubmitted } = useContext(GameContext);
 
   const { world, isLoading, error: worldError, refetch: refetchWorld } = useGetWorld();
   const { error: iterationError, refetch: refetchIteration } = useGetIteration();
@@ -80,7 +80,11 @@ export const WorldContextProvider = ({ children }: PropsWithChildren) => {
       world,
       submitOrders: async (orders: Order[]) => {
         if (!game || !world) return;
-        const players = game.player ? [game.player] : Object.values(Nation);
+        let players = game.player ? [game.player] : Object.values(Nation);
+        if (game.player === Nation.Superuser) {
+          players = Object.values(Nation)
+            .filter((nation) => !playersSubmitted.includes(nation))
+        }
         await submitOrders({ gameId: game.id, players, orders });
         await refetchUntilUpdate();
       },

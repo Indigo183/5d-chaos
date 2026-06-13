@@ -47,6 +47,7 @@ public class WorldRepository(ILogger<WorldRepository> logger, GameContext contex
         var game = await context.Games.FindAsync(gameId)
             ?? throw new GameNotFoundException();
 
+        submitted = game.playersSubmitted
         if (game.PlayersSubmitted.Intersect(players).Any())
         {
             logger.LogInformation("Found existing submission for players {Players}, ignoring new submission", players);
