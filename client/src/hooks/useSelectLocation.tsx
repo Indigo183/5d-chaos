@@ -97,7 +97,8 @@ const useSelectLocation = (
 
   if (!game || !world || isLoading || !boardState) return false;
 
-  const { player } = game;
+  let { player } = game;
+  if (player === Nation.Superuser) player = null;
   const { timeline, year, phase } = location;
   const isActiveBoard =
     !world.winner &&

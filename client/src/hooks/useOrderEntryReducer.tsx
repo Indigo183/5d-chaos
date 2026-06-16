@@ -108,7 +108,8 @@ const handleBasicOrderCreation = (
   state: Omit<OrderEntryState, 'dispatch'>,
   action: AddOrderAction,
 ): Omit<OrderEntryState, 'dispatch'> => {
-  const { player, currentMode, currentOrder, orders } = state;
+  let { player, currentMode, currentOrder, orders } = state;
+  if (player === Nation.Superuser) player = null;
   const { unit, location } = action;
   const filteredOrders = orders.filter(
     (order) => !compareLocations(order.location, action.location),
