@@ -36,7 +36,15 @@ const handleAdjustmentOrderCreation = (
     (currentMode === InputMode.Build || (!unit && currentMode === InputMode.None)) &&
     !currentOrder
   ) {
-    if (!isPlayerNation) return state;
+    const { world } = useContext(WorldContext);
+    const board = world?.boards.find(
+      (worldBoard) =>
+        worldBoard.timeline === location.timeline &&
+        worldBoard.year === location.year &&
+        worldBoard.phase === location.phase,
+    );
+    if (player && board?.centres[location.region] !== player) return state;
+    // if (!isPlayerNation) return state;
 
     return {
       ...state,
