@@ -1,4 +1,4 @@
-import Nation, { getNationColour } from '../../types/enums/nation';
+import Nation, { getNationColour, getNationName } from '../../types/enums/nation';
 import { victoryRequiredCentreCount } from '../../utils/constants';
 import ExpandButton from './common/ExpandButton';
 import colours from '../../utils/colours';
@@ -45,7 +45,7 @@ const PlayerListItem = ({
             }}
           />
         )}
-        <p className="min-w-20 text-start">{player}</p>
+        <p className="min-w-20 text-start">{getNationName(player)}</p>
         <p className="min-w-16 font-bold text-end">
           {`${centreCount}/${victoryRequiredCentreCount}`}
         </p>

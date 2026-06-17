@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import colours from '../../utils/colours';
-import { getNationColour } from '../../types/enums/nation';
+import { getNationColour, getNationName } from '../../types/enums/nation';
 import CopyIcon from '../../assets/icons/CopyIcon.svg?react';
 import DownloadIcon from '../../assets/icons/DownloadIcon.svg?react';
 import GameContext from '../context/GameContext';
@@ -52,7 +52,7 @@ const GameDetails = () => {
         className="font-bold text-lg"
         style={{ color: player ? getNationColour(player) : colours.uiForeground }}
       >
-        {player ?? 'Sandbox'}
+        {player ? getNationName(player) : 'Sandbox'}
       </p>
       <p className="text-xs opacity-50">{adjacencySettingText}</p>
     </div>

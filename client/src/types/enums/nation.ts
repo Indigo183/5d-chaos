@@ -47,4 +47,28 @@ export const getNationColour = (nation?: Nation, isEmphasised: boolean = true) =
   }[nation];
 };
 
+export const getNationName = (nation: Nation) => {
+  return {
+    [Nation.Trieste ]: 'Trieste-Spain',
+    [Nation.Denmark ]: 'Denmark-Constantinople',
+    [Nation.Berlin ]: 'Berlin-Sweden',
+    [Nation.Kiel ]: 'Kiel-Venice',
+    [Nation.Bulgaria ]: 'Bulgaria-Munich',
+    [Nation.Ankara ]: 'Ankara-Portugal',
+    [Nation.Belgium ]: 'Belgium-Marseille',
+    [Nation.Brest ]: 'Brest-Paris',
+    [Nation.London ]: 'London-Rome',
+    [Nation.Warsaw ]: 'Warsaw-Liverpool',
+    [Nation.Rumania ]: 'Rumania-Smyrna',
+    [Nation.Norway ]: 'Norway-Holland',
+    [Nation.Serbia ]: 'Serbia-Moscow',
+    [Nation.StPetersburg ]: 'St. Petersburg-Vienna',
+    [Nation.Greece ]: 'Greece-Naples',
+    [Nation.Budapest ]: 'Budapest-Sevastopol',
+    [Nation.Tunis ]: 'Tunis-Edinburgh',
+
+    [Nation.Superuser]: 'Superuser',
+  }[nation];
+};
+
 export default Nation;

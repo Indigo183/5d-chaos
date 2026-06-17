@@ -1,5 +1,5 @@
 import { useContext, useRef, useState } from 'react';
-import Nation from '../../types/enums/nation';
+import Nation, { getNationName } from '../../types/enums/nation';
 import colours from '../../utils/colours';
 import WorldContext from '../context/WorldContext';
 import GameDetails from './GameDetails';

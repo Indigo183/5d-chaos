@@ -1,4 +1,4 @@
-import Nation, { getNationColour } from '../../types/enums/nation';
+import Nation, { getNationColour, getNationName } from '../../types/enums/nation';
 import Select from './common/Select';
 
 type NationSelectProps = {
@@ -9,7 +9,7 @@ type NationSelectProps = {
 const NationSelect = ({ selectedNation, setSelectedNation }: NationSelectProps) => (
   <Select
     options={[undefined, ...Object.values(Nation)].map((nation) => ({
-      text: nation ?? 'Random',
+      text: nation ? getNationName(nation) : 'Random',
       color: nation && getNationColour(nation),
       value: nation,
     }))}
