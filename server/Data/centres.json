@@ -25,7 +25,7 @@
   },
   {
     "location": { "regionId": "Con" },
-    "owner": "Constantinople"
+    "owner": "Denmark"
   },
   {
     "location": { "regionId": "Den" },
@@ -33,7 +33,7 @@
   },
   {
     "location": { "regionId": "Edi" },
-    "owner": "Edinburgh"
+    "owner": "Tunis"
   },
   {
     "location": { "regionId": "Gre" },
@@ -41,7 +41,7 @@
   },
   {
     "location": { "regionId": "Hol" },
-    "owner": "Holland"
+    "owner": "Norway"
   },
   {
     "location": { "regionId": "Kie" },
@@ -53,23 +53,23 @@
   },
   {
     "location": { "regionId": "Lvp" },
-    "owner": "Liverpool"
+    "owner": "Warsaw"
   },
   {
     "location": { "regionId": "Mar" },
-    "owner": "Marseille"
+    "owner": "Belgium"
   },
   {
     "location": { "regionId": "Mos" },
-    "owner": "Moscow"
+    "owner": "Serbia"
   },
   {
     "location": { "regionId": "Mun" },
-    "owner": "Munich"
+    "owner": "Bulgaria"
   },
   {
     "location": { "regionId": "Nap" },
-    "owner": "Naples"
+    "owner": "Greece"
   },
   {
     "location": { "regionId": "Nwy" },
@@ -77,15 +77,15 @@
   },
   {
     "location": { "regionId": "Par" },
-    "owner": "Paris"
+    "owner": "Brest"
   },
   {
     "location": { "regionId": "Por" },
-    "owner": "Portugal"
+    "owner": "Ankara"
   },
   {
     "location": { "regionId": "Rom" },
-    "owner": "Rome"
+    "owner": "London"
   },
   {
     "location": { "regionId": "Rum" },
@@ -97,15 +97,15 @@
   },
   {
     "location": { "regionId": "Sev" },
-    "owner": "Sevastopol"
+    "owner": "Budapest"
   },
   {
     "location": { "regionId": "Smy" },
-    "owner": "Smyrna"
+    "owner": "Rumania"
   },
   {
     "location": { "regionId": "Spa" },
-    "owner": "Spain"
+    "owner": "Trieste"
   },
   {
     "location": { "regionId": "Stp" },
@@ -113,7 +113,7 @@
   },
   {
     "location": { "regionId": "Swe" },
-    "owner": "Sweden"
+    "owner": "Berlin"
   },
   {
     "location": { "regionId": "Tri" },
@@ -125,11 +125,11 @@
   },
   {
     "location": { "regionId": "Ven" },
-    "owner": "Venice"
+    "owner": "Kiel"
   },
   {
     "location": { "regionId": "Vie" },
-    "owner": "Vienna"
+    "owner": "StPetersburg"
   },
   {
     "location": { "regionId": "War" },
