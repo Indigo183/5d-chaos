@@ -3,6 +3,7 @@
 public enum Nation
 {
   Superuser,
+  AnalysisBoard,
 
   Ankara,
   Belgium,

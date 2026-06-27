@@ -81,6 +81,7 @@ export const WorldContextProvider = ({ children }: PropsWithChildren) => {
       submitOrders: async (orders: Order[]) => {
         if (!game || !world) return;
         let players = game.player ? [game.player] : Object.values(Nation);
+        if (game.player === Nation.AnalysisBoard) return;
         if (game.player === Nation.Superuser) {
           players = Object.values(Nation)
             .filter((nation) => !playersSubmitted.includes(nation))

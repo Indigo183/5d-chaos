@@ -20,6 +20,7 @@ enum Nation {
   Warsaw = 'Warsaw',
 
   Superuser = "Superuser",
+  AnalysisBoard = "Analysis Board",
 }
 
 export const getNationColour = (nation?: Nation, isEmphasised: boolean = true) => {
@@ -43,6 +44,7 @@ export const getNationColour = (nation?: Nation, isEmphasised: boolean = true) =
     [Nation.Tunis]: '#FBCCE7',
     [Nation.Warsaw]: '#E6E6E6',
 
+    [Nation.AnalysisBoard]: '#FFFFFF',
     [Nation.Superuser]: '#FFFFFF',
   }[nation];
 };
@@ -68,6 +70,7 @@ export const getNationName = (nation: Nation) => {
     [Nation.Tunis ]: 'Tunis-Edinburgh',
 
     [Nation.Superuser]: 'Superuser',
+    [Nation.AnalysisBoard]: 'Analysis Board',
   }[nation];
 };
 

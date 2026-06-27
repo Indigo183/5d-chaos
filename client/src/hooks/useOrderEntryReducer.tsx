@@ -21,7 +21,7 @@ const handleAdjustmentOrderCreation = (
   action: AddOrderAction,
 ): Omit<OrderEntryState, 'dispatch'> => {
   let { player, currentMode, currentOrder } = state;
-  if (player === Nation.Superuser) player = null;
+  if (player === Nation.Superuser || player === Nation.AnalysisBoard) player = null;
   const { unit, location } = action;
   const filteredOrders = state.orders.filter(
     (order) => !compareLocations(order.location, action.location, true),
@@ -117,7 +117,7 @@ const handleBasicOrderCreation = (
   action: AddOrderAction,
 ): Omit<OrderEntryState, 'dispatch'> => {
   let { player, currentMode, currentOrder, orders } = state;
-  if (player === Nation.Superuser) player = null;
+  if (player === Nation.Superuser || player === Nation.AnalysisBoard) player = null;
   const { unit, location } = action;
   const filteredOrders = orders.filter(
     (order) => !compareLocations(order.location, action.location),

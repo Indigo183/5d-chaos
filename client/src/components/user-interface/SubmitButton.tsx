@@ -13,11 +13,14 @@ const SubmitButton = () => {
   const { game } = useContext(GameContext);
   if (!game) return null;
   const { id, player } = game;
+  
+  if (player === Nation.AnalysisBoard) return;
 
   const { world, submitOrders, isLoading, error } = useContext(WorldContext);
   const { dispatch, orders } = useContext(OrderEntryContext);
   const textRef = useRef<string>("")
   const inputRef = useRef<TextInputHandle>(null);
+
 
   const onSubmit = () => {
     dispatch({ $type: OrderEntryActionType.Submit });
