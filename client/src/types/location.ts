@@ -15,9 +15,12 @@ type Location = {
   region: string;
 };
 
+export const baseRegion = (region: String) => {
+  return region.split('_')[0]
+};
+
 export const isCoast = (region: string) => {
-  const baseRegion = region.split('_')[0];
-  return baseRegion !== region;
+  return baseRegion(region) !== region;
 };
 
 export const displayLocation = (location: Location | null) =>

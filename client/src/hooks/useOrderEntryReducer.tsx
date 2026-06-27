@@ -8,7 +8,7 @@ import OrderEntryAction, {
 } from '../types/context/orderEntryAction';
 import OrderEntryState from '../types/context/orderEntryState';
 import UnitType from '../types/enums/unitType';
-import { compareLocations, getLocationKey } from '../types/location';
+import { compareLocations, getLocationKey, baseRegion } from '../types/location';
 import Phase from '../types/enums/phase';
 import GameContext from '../components/context/GameContext';
 import WorldContext from '../components/context/WorldContext';
@@ -43,7 +43,7 @@ const handleAdjustmentOrderCreation = (
         worldBoard.year === location.year &&
         worldBoard.phase === location.phase,
     );
-    if (player && board?.centres[location.region] !== player) return state;
+    if (player && board?.centres[baseRegion(location.region)] !== player) return state;
     // if (!isPlayerNation) return state;
 
     return {
